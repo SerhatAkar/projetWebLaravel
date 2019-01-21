@@ -5,9 +5,6 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-
-window.Vue = require('vue');
 
 /**
  * The following block of code may be used to automatically register your
@@ -28,6 +25,9 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app'
-});
+window._ = require('lodash');
+window.Popper = require('popper.js').default;
+try {
+    window.$ = window.jQuery = require('jquery');
+    require('bootstrap');
+} catch (e) {}
