@@ -12,9 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome',array('name' => 'Projet Web'));
+ 
+  return view('evenement',array('name' => 'Projet Web'));
 });
-
 
 Auth::routes();
 

@@ -10491,30 +10491,29 @@ a.text-dark:focus {
   }
 }
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-
 * {
-  margin: 0;
-  padding: 0;
   background-color: black;
+  /** width: 100%; **/
 }
 
-#header {
-  position: absolute;
-  box-sizing: border-box;
-  /** border: 1px solid #A1A1A1; **/
-  background: #E5E5E5;
-  background-color: black;
-  overflow: hidden;
-  opacity: 1;
+body {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
 }
+
+/*  #header {
+box-sizing: border-box;
+background: #E5E5E5;
+background-color: rgba(0,0,0,1);
+opacity: 1;
+} */
 
 .carre {
-  width: 1761px;
-  height: 166px;
+  padding-left: 0%;
+  padding-right: 0%;
+  height: 20%;
   background: #3D3D3D;
   margin: 0px auto;
 }
@@ -10536,7 +10535,7 @@ a.text-dark:focus {
   margin: auto;
   text-align: center;
   font-family: Calibri;
-  font-size: 50px;
+  font-size: 35px;
   font-weight: 700;
   position: relative;
   top: 50px;
@@ -10547,35 +10546,29 @@ a.text-dark:focus {
   overflow: visible;
   width: 160px;
   height: 166px;
-  left: 1670px;
+  right: 73px;
   top: 0px;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden;
+.menu {
   width: 100%;
+  position: fixed;
 }
 
-nav ul {
-  padding: 25px;
-  margin: 0px;
-  text-align: center;
-  list-style-type: none;
-  background-color: black;
+.menu nav ul {
+  border: 2px solid grey;
 }
 
 nav li {
   display: inline-block;
-  width: 247px;
+  width: 160px;
   height: 40px;
   margin: 0px;
   padding: 0px;
   border-right: 0px solid #CCCCCC;
   text-align: center;
   line-height: 40px;
+  font-size: 20px;
 }
 
 nav li :hover {
@@ -10588,13 +10581,263 @@ nav li a {
   color: #FFFFFF;
 }
 
-#myFooter {
-  background-color: #3a3f46;
+.titre_event h3 {
+  opacity: 1;
+  position: relative;
+  left: 800px;
+  top: 85px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  width: 337px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  color: #FFFFFF;
+}
+
+.calendar h4 {
+  opacity: 1;
+  position: absolute;
+  left: 162px;
+  top: 350px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  width: 145px;
+  height: 40px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
   color: white;
 }
 
+.calendar img {
+  position: relative;
+  left: 102px;
+  top: 180px;
+}
+
+.inc_event h4 {
+  opacity: 1;
+  position: absolute;
+  left: 830px;
+  top: 350px;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  overflow: visible;
+  width: 270px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: segoe UI;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}
+
+.inc_event h5 {
+  opacity: 1;
+  position: relative;
+  left: 790px;
+  top: 0px;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  overflow: visible;
+  width: 337px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+.passed_event h4 {
+  opacity: 1;
+  position: relative;
+  left: 830px;
+  top: 100px;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  overflow: visible;
+  width: 270px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: segoe UI;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}
+
+.passed_event h5 {
+  opacity: 1;
+  position: relative;
+  left: 790px;
+  top: 115px;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  overflow: visible;
+  width: 337px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+.title_form h4 {
+  opacity: 1;
+  position: absolute;
+  left: 1400px;
+  top: 350px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  width: 358px;
+  height: 66px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}
+
+.nom input {
+  opacity: 1;
+  position: absolute;
+  left: 1400px;
+  top: 400px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  width: 358px;
+  height: 52px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+}
+
+.date_1 input {
+  opacity: 1;
+  position: absolute;
+  left: 1400px;
+  top: 450px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  width: 358px;
+  height: 52px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+}
+
+.date_2 input {
+  opacity: 1;
+  position: absolute;
+  left: 1400px;
+  top: 500px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  width: 358px;
+  height: 52px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+}
+
+.lieu input {
+  opacity: 1;
+  position: absolute;
+  left: 1400px;
+  top: 550px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  width: 358px;
+  height: 52px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+}
+
+.bouton {
+  opacity: 1;
+  position: absolute;
+  left: 1400px;
+  top: 600px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  width: 358px;
+  height: 52px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+}
+
+#myFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 #myFooter .row {
-  margin-bottom: 60px;
+  margin-bottom: 0px;
+}
+
+.row img#i3 {
+  position: absolute;
+  left: 180px;
+  top: 50px;
 }
 
 #myFooter .info {
@@ -10603,6 +10846,8 @@ nav li a {
 }
 
 #myFooter ul {
+  position: absolute;
+  top: 50px;
   list-style-type: none;
   padding-left: 0;
   line-height: 1.7;
@@ -10615,11 +10860,16 @@ nav li a {
   margin-top: 30px;
 }
 
-#myFooter .logo {
+#myFooter .titre {
   /** alignement du texte **/
   margin-top: 10px;
   vertical-align: text-top;
   text-align: center;
+}
+
+#myFooter .img {
+  position: absolute;
+  left: 55px;
 }
 
 /** .gallery {
