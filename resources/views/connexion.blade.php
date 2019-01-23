@@ -10,6 +10,7 @@
    <video autoplay muted loop id="myVideo">
   <source src={{ asset('images/BlueSky.mp4') }} type="video/mp4">
 </video>
+
      @include('includes.header')
 
       <div class="container h-100">
@@ -58,11 +59,8 @@
 			</div>
 		</div>
 	</div>
-</body>
-</html>
+
+
   
-
-
-</body>
 
 @include('includes.footer')
