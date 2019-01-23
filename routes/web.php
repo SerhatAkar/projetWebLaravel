@@ -13,7 +13,12 @@
 
 Route::get('/', function () {
  
-  return view('evenement',array('name' => 'Projet Web'));
+  return view('home',array('name' => 'Projet Web'));
+});
+
+Route::get('connexion', function () {
+ 
+  return view('connexion',array('name' => 'Projet Web'));
 });
 
 Auth::routes();
