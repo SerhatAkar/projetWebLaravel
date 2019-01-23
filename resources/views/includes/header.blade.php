@@ -14,17 +14,15 @@
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">Evenements</a>
+                     <a class="nav-link" href={{ URL::to('evenements') }}>Evenements</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">Boutique</a>
+                     <a class="nav-link" href={{ URL::to('boutique') }}>Boutique</a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link" href={{ URL::to('connexion') }}>Connexion</a>
                   </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#">Inscription</a>
-                  </li>
+                
                </ul>
             </div>
          </div>

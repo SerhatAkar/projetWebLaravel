@@ -21,6 +21,19 @@ Route::get('connexion', function () {
   return view('connexion',array('name' => 'Projet Web'));
 });
 
+Route::get('boutique', function () {
+ 
+  return view('boutique',array('name' => 'Projet Web'));
+});
+
+Route::get('evenements', function () {
+ 
+  return view('evenements',array('name' => 'Projet Web'));
+});
+
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
