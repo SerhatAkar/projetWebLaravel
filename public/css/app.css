@@ -10601,3 +10601,8 @@ a.text-dark:focus {
   }
 }
 
+#titreEvenements {
+  text-align: center;
+  background-color: gray;
+}
+
