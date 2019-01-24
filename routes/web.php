@@ -31,6 +31,11 @@ Route::get('evenements', function () {
   return view('evenements',array('name' => 'Projet Web'));
 });
 
+Route::get('inscription', function () {
+ 
+  return view('inscription',array('name' => 'Projet Web'));
+});
+
 
 
 

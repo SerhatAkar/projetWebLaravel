@@ -1,8 +1,6 @@
 @include('includes.head')
 
-<video autoplay muted loop id="myVideo">
-<source src={{ asset('images/BlueSky.mp4') }} type="video/mp4">
-</video>
+
   
    <body>
    <video autoplay muted loop id="myVideo">

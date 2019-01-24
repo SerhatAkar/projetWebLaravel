@@ -22,6 +22,9 @@
                   <li class="nav-item">
                      <a class="nav-link" href={{ URL::to('connexion') }}>Connexion</a>
                   </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href={{ URL::to('inscription') }}>Inscription</a>
+                  </li>
                 
                </ul>
             </div>

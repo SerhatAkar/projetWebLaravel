@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer font-small special-color-dark pt-4" id="footerCo">
+<footer class="page-footer font-small dark  pt-4" id="footerCo">
          <!-- Footer Elements -->
          <div class="container">
             <!-- Social buttons -->
