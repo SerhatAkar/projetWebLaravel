@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function () {
- 
-  return view('home',array('name' => 'Projet Web'));
-});
+
+
 
 Route::get('connexion', function () {
  
@@ -31,16 +29,19 @@ Route::get('evenements', function () {
   return view('evenements',array('name' => 'Projet Web'));
 });
 
-Route::get('inscription', function () {
- 
-  return view('inscription',array('name' => 'Projet Web'));
-});
 
 
-
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+ Route::get('/inscription', function()
+{
+  return View::make('inscription');
+}); 
+
+Route::post('/inscription','auth\RegisterController@create');
+
+Route::match(['get', 'post'], 'register', function(){
+  return redirect('/');
+}); 
 

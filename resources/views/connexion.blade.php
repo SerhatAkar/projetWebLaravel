@@ -8,12 +8,12 @@
 </video>
 
      @include('includes.header')
-
+     <form form method="POST" action="{{ route('login') }}">
       <div class="container h-100">
      
         <div class="d-flex justify-content-center h-100">
-            
-            <div class="user_card">
+           
+            <div class="user_card ">
                 <div class="d-flex justify-content-center">
                     <div class="brand_logo_container">
                         <img src={{ asset('images/logoBdeSansBord.png') }} class="brand_logo" alt="Logo">
@@ -42,8 +42,10 @@
                     </form>
                 </div>
                 <div class="d-flex justify-content-center mt-3 login_container">
-                    <button type="button" name="button" class="btn login_btn">Login</button>
+                    <button type="submit" name="button" class="btn login_btn">Login</button>
+
                 </div>
+                </form>
                 <div class="mt-4">
                     <div class="d-flex justify-content-center links">
                     Pas encore inscrit <a href="#" class="ml-2">Inscription</a>
@@ -53,7 +55,9 @@
                     </div>
                 </div>
             </div>
+            
         </div>
+
     </div>
 
 
