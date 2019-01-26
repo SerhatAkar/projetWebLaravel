@@ -8,7 +8,7 @@
 </video>
 
      @include('includes.header')
-     <form form method="POST" action="{{ route('login') }}">
+     <form form method="POST" action="{{ route('connexion') }}">
       <div class="container h-100">
      
         <div class="d-flex justify-content-center h-100">

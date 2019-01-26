@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7acbc1ee963fabcb316a96828e246ab4",
+    "content-hash": "7e543c257600fecd9d1a1807b09673bc",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3006,6 +3006,56 @@
                 "dump"
             ],
             "time": "2019-01-03T09:07:35+00:00"
+        },
+        {
+            "name": "thibaud-dauce/migrations",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/thibauddauce/migrations.git",
+                "reference": "91769881e66e4395733c50957a124af578b9620d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/thibauddauce%2Fmigrations/repository/archive.zip?sha=91769881e66e4395733c50957a124af578b9620d",
+                "reference": "91769881e66e4395733c50957a124af578b9620d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^5.5",
+                "illuminate/database": "^5.5",
+                "illuminate/support": "^5.5",
+                "php": ">7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.5",
+                "phpunit/phpunit": "^6.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ThibaudDauce\\Migrations\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ThibaudDauce\\Migrations\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thibaud Dauce",
+                    "email": "thibaud.dauce@pm.me"
+                }
+            ],
+            "description": "Migrations' helpers to create SQL views, relationships' columns and more!",
+            "time": "2018-11-07T11:06:32+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

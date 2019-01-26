@@ -29,9 +29,6 @@ Route::get('evenements', function () {
   return view('evenements',array('name' => 'Projet Web'));
 });
 
-
-
-
 Route::get('/home', 'HomeController@index')->name('home');
 
  Route::get('/inscription', function()
