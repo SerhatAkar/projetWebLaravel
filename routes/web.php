@@ -12,33 +12,41 @@
 */
 
 
+Auth::routes();
 
+Route::get('/', function () {
+  return view('home');
+});
 
 Route::get('connexion', function () {
  
-  return view('connexion',array('name' => 'Projet Web'));
+  return view('connexion');
 });
-
+ 
 Route::get('boutique', function () {
  
-  return view('boutique',array('name' => 'Projet Web'));
+  return view('boutique');
 });
 
 Route::get('evenements', function () {
  
-  return view('evenements',array('name' => 'Projet Web'));
+  return view('evenements');
 });
+
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
- Route::get('/inscription', function()
-{
-  return View::make('inscription');
-}); 
+ 
 
-Route::post('/inscription','auth\RegisterController@create');
+//Route::post('/inscription','auth\RegisterController@create');
 
-Route::match(['get', 'post'], 'register', function(){
-  return redirect('/');
-}); 
+// Route::match(['get', 'post'], 'register', function(){
+ //  return redirect('/');
+// }); 
+
+
+
+
 

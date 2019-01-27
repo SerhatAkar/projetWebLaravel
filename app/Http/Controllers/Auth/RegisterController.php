@@ -26,7 +26,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/connectedUserWelcome';
+    protected $redirectTo = '/';
     /**
      * Create a new controller instance.
      *
@@ -47,10 +47,10 @@ class RegisterController extends Controller
         return Validator::make($data, [
             
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'username' => ['required', 'string', 'min:6', 'confirmed'],
-            'lname' => ['required', 'string', 'min:6', 'confirmed'],
-            'fname' => ['required', 'string', 'min:6', 'confirmed'],
+            'password' => ['required', 'string', 'min:3'],
+            'username' => ['required', 'string', 'min:3' ],
+            'lname' => ['required', 'string', 'min:3'],
+            'fname' => ['required', 'string', 'min:3'],
             
         ]);}
     /**}
@@ -59,7 +59,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    public function create(Request $data)
+    public function create(array $data)
     {
         return User::create([
             
