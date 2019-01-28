@@ -22,6 +22,7 @@ class Users extends Migration
             $table->string('password');
             $table->string('email');
             $table->string('lname');
+            $table->integer('permissions');
             $table->rememberToken();
         });
     }
