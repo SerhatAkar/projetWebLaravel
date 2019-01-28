@@ -38,6 +38,11 @@ Route::get('proposerEvenement', function () {
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 
+
+Route::post('/proposerEvenement','PropositionController@store');
+
+
+
 //Route::get('/home', 'HomeController@index')->name('home');
 
  

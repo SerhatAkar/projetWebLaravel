@@ -24,8 +24,9 @@ class PropositionController extends Controller
      */
     public function create()
     {
-        //
+        return view('proposerEvenement');
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +36,11 @@ class PropositionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
+        return proposition::create(
+        $request->all());
+        flash('Votre demande à bien été envoyée !');
+
     }
 
     /**

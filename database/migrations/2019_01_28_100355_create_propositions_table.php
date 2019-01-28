@@ -16,7 +16,7 @@ class CreatePropositionsTable extends Migration
         Schema::create('propositions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('lieu');
+            $table->string('place');
             $table->string('desc');
             $table->timestamps();
         });
