@@ -11,44 +11,52 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-        $product = new \App\Product([
-            'imagePath' => '...',
-            'title' => '...',
-            'description' => '...',
+        $products = new \App\Product([
+            'imagePath' => 'https://media.koreus.com/201701/allez-faire-loutre.jpg',
+            'title' => 'Article 1',
+            'description' => 'Une belle loutre - pas cher',
             'price' => 10
         ]);
-        $product->save();
+        $products->save();
 
-        $product = new \App\Product([
-            'imagePath' => '...',
-            'title' => '...',
-            'description' => '...',
-            'price' => 10
+        $products = new \App\Product([
+            'imagePath' => 'https://zoom.disneynature.fr/sites/default/files/styles/node__article__main_image__full/public/01427101.jpg?itok=PGIR2Vmn',
+            'title' => 'Article 2',
+            'description' => 'Une belle loutre - pas cher',
+            'price' => 20
         ]);
-        $product->save();
+        $products->save();
 
-        $product = new \App\Product([
-            'imagePath' => '...',
-            'title' => '...',
-            'description' => '...',
-            'price' => 10
+        $products = new \App\Product([
+            'imagePath' => 'https://www.parc-animalier-pyrenees.com/Fichiers/animaux/111641teteloutre-parcanimalierdespyrenees-argelesgazost.jpg',
+            'title' => 'Article 3',
+            'description' => 'Une belle loutre - pas cher',
+            'price' => 30
         ]);
-        $product->save();
+        $products->save();
 
-        $product = new \App\Product([
-            'imagePath' => '...',
-            'title' => '...',
-            'description' => '...',
-            'price' => 10
+        $products = new \App\Product([
+            'imagePath' => 'http://alpesdusud.alpes1.com/media/news/thumb/870x489_200909281479.jpg',
+            'title' => 'Article 4',
+            'description' => 'Une belle loutre - pas cher',
+            'price' => 40
         ]);
-        $product->save();
-        
-        $product = new \App\Product([
-            'imagePath' => '...',
-            'title' => '...',
-            'description' => '...',
-            'price' => 10
+        $products->save();
+
+        $products = new \App\Product([
+            'imagePath' => 'http://wp.unil.ch/allezsavoir/files/2017/09/loutre_1_67.jpg',
+            'title' => 'Article 5',
+            'description' => 'Une belle loutre - pas cher',
+            'price' => 50
         ]);
-        $product->save();
+        $products->save();
+
+        $products = new \App\Product([
+            'imagePath' => 'https://dailygeekshow.com/wp-content/uploads/2018/06/dangers-loutres-de-mer.jpg',
+            'title' => 'Article 6',
+            'description' => 'Une belle loutre - pas cher',
+            'price' => 60
+        ]);
+        $products->save();
     }
 }

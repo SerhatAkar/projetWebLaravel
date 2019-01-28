@@ -21,10 +21,7 @@ Route::get('/', function () {
 
 
  
-Route::get('boutique', function () {
- 
-  return view('boutique');
-});
+Route::get('boutique', 'ProductController@index')->name('boutique');
 
 Route::get('evenements', function () {
  
