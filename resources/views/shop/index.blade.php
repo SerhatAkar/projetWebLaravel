@@ -1,4 +1,3 @@
-
 @include('includes.head')
 <body>
 @include('includes.header')
@@ -10,7 +9,6 @@
 
             <h3 class="text-center">Ici tu trouveras tous nos produits ! </h3>
             <label style="padding-bottom: 20px"></label>
-            
             
                 <!-- affichage des articles -->
                 <div class="container">
