@@ -59,17 +59,28 @@
 </div>
 
 
-<div class="container">
-<div class="row">
-<h1> Voici les evenements proposés ! </h1>
+
+<div class="row-fluid">
+<h1 style="text-align:center;"> Voici les evenements proposés ! </h1>
 </div>
-@foreach ($propositions as $propositions)
 
-<p> {{$propositions -> name }} <p>
 
+
+
+@foreach ($propositions->sortByDesc('created_at')  as $propositions)
+@if ( $propositions -> statut  == 1 )
+<div row id="propositionsRow">
+<p> {{$propositions -> name }} </p>
+<p> {{$propositions -> place }}  </p>
+<p> {{$propositions -> desc }} </p>
+<button> <i class="fas fa-plus"></i> </button>
+<button style="background-color:red;"> <i class="fas fa-minus"></i> </button>
+</div>
+@endif
 @endforeach
 
-</div>
+
+
 
 @include('includes.footer')
 
