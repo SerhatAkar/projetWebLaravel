@@ -38,7 +38,7 @@
                         <div class="card-body" style="background-color: #d9d9d9">
                             <img style="max-width: 50%" class='card-img-body'>
                             <p>description</p>  <!-- utiliser requete de description -->
-                            <p> prix : 10 €</p> <!-- utiliser requete du prix-->
+                            <p>prix : 10 €</p> <!-- utiliser requete du prix-->
                             <a href='#'><button type="button" class="btn btn-success"> <i class="fa fa-shopping-basket" aria-hidden="true"></i> Ajouter au panier</button></a>
                         </div>
                         <div class="card-footer" style="background-color: #d9d9d9"></div>
