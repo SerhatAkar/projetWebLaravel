@@ -2,8 +2,11 @@
 <body>
 @include('includes.header')
 
+
+
 <div class="row" id="contentCenterHome">
-    <p> Message à diffuser ! </p>
+
+
 </div>
 
 
