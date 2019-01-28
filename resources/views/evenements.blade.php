@@ -53,12 +53,36 @@
 
 
 <div class="row" id = "proposer">
-<p> Proposer un evenement ? </p>
+
+<a href={{ URL::to('proposerEvenement') }}> Proposer un evenement </a>
+
 </div>
 
-  </main>
+
+
+<div class="row-fluid">
+<h1 style="text-align:center;"> Voici les evenements proposés ! </h1>
+</div>
+
+
+@foreach ($propositions->sortByDesc('created_at')  as $propositions)
+
+@if ( $propositions -> statut  == 1 )
+<div row id="propositionsRow">
+<p> {{$propositions -> name }} </p>
+<p> {{$propositions -> place }}  </p>
+<p> {{$propositions -> desc }} </p>
+<button> <i class="fas fa-plus"></i> </button>
+<button style="background-color:red;"> <i class="fas fa-minus"></i> </button>
+</div>
+
+@endif
+@endforeach
+
+
 
 
 @include('includes.footer')
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src= "{{ asset('js/carousel.js' ) }}" ></script>

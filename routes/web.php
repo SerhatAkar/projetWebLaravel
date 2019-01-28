@@ -18,18 +18,30 @@ Route::get('/', function () {
   $users = DB::table('users')->get();
   return view('home',['data'=> $users]);
 });
-
+Route::get('/home', function () {
+  $users = DB::table('users')->get();
+  return view('home',['data'=> $users]);
+});
 
  
 Route::get('boutique', 'ProductController@index')->name('boutique');
 
 Route::get('evenements', function () {
- 
-  return view('evenements');
+  $propositions = DB::table('propositions')->get();
+  return view('evenements',['propositions'=> $propositions]);
 });
 
+Route::get('proposerEvenement', function () {
+ 
+  return view('proposerEvenement');
+});
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
+
+
+Route::post('/proposerEvenement','PropositionController@store');
+
+
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
