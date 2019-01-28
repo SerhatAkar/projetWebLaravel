@@ -53,12 +53,15 @@
 
 
 <div class="row" id = "proposer">
-<p> Proposer un evenement ? </p>
+
+<a href={{ URL::to('proposerEvenement') }}> Proposer un evenement </a>
+
 </div>
 
-  </main>
+  
 
 
 @include('includes.footer')
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src= "{{ asset('js/carousel.js' ) }}" ></script>
