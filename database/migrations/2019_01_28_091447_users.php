@@ -26,8 +26,8 @@ class Users extends Migration
             $table->rememberToken();
         });
     }
-
-    /**
+ 
+    /*
      * Reverse the migrations.
      *
      * @return void
