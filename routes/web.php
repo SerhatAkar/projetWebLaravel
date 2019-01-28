@@ -31,6 +31,10 @@ Route::get('evenements', function () {
   return view('evenements');
 });
 
+Route::get('proposerEvenement', function () {
+ 
+  return view('proposerEvenement');
+});
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 
