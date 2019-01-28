@@ -39,8 +39,9 @@ class PropositionController extends Controller
         
         $proposition =  proposition::create(
         $request->all());
-        return redirect('/proposerEvenement')->with('status', 'Votre demande à bien été envoyée !');
         
+        return redirect('/proposerEvenement')->with('status', 'Votre demande à bien été envoyée !');
+
 
       
 

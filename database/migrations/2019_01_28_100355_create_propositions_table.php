@@ -19,6 +19,9 @@ class CreatePropositionsTable extends Migration
             $table->string('place');
             $table->string('desc');
             $table->timestamps();
+            $table->integer('statut')->default(0);
+
+
         });
     }
 
