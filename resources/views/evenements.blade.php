@@ -65,9 +65,8 @@
 </div>
 
 
-
-
 @foreach ($propositions->sortByDesc('created_at')  as $propositions)
+
 @if ( $propositions -> statut  == 1 )
 <div row id="propositionsRow">
 <p> {{$propositions -> name }} </p>
@@ -76,6 +75,7 @@
 <button> <i class="fas fa-plus"></i> </button>
 <button style="background-color:red;"> <i class="fas fa-minus"></i> </button>
 </div>
+
 @endif
 @endforeach
 
