@@ -15,13 +15,11 @@
 Auth::routes();
 
 Route::get('/', function () {
-  return view('home');
+  $users = DB::table('users')->get();
+  return view('home',['data'=> $users]);
 });
 
-Route::get('connexion', function () {
- 
-  return view('connexion');
-});
+
  
 Route::get('boutique', function () {
  
@@ -34,9 +32,9 @@ Route::get('evenements', function () {
 });
 
 
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 
-
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
  
 
