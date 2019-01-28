@@ -18,8 +18,7 @@ class CreateEvenementsTable extends Migration
             $table->string('name');
             $table->string('lieu');
             $table->string('desc');
-            $table->string('date_debut');
-            $table->string('date_fin');
+            $table->string('image');
             $table->timestamps();
         });
     }
