@@ -18,7 +18,10 @@ Route::get('/', function () {
   $users = DB::table('users')->get();
   return view('home',['data'=> $users]);
 });
-
+Route::get('/home', function () {
+  $users = DB::table('users')->get();
+  return view('home',['data'=> $users]);
+});
 
  
 Route::get('boutique', function () {
@@ -27,8 +30,8 @@ Route::get('boutique', function () {
 });
 
 Route::get('evenements', function () {
- 
-  return view('evenements');
+  $propositions = DB::table('propositions')->get();
+  return view('evenements',['propositions'=> $propositions]);
 });
 
 Route::get('proposerEvenement', function () {

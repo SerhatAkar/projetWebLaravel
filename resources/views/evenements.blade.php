@@ -58,8 +58,18 @@
 
 </div>
 
-  
 
+<div class="container">
+<div class="row">
+<h1> Voici les evenements proposés ! </h1>
+</div>
+@foreach ($propositions as $propositions)
+
+<p> {{$propositions -> name }} <p>
+
+@endforeach
+
+</div>
 
 @include('includes.footer')
 

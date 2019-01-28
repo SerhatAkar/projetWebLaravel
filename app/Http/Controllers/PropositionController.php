@@ -36,10 +36,13 @@ class PropositionController extends Controller
      */
     public function store(Request $request)
     {
-    
-        return proposition::create(
+        
+        $proposition =  proposition::create(
         $request->all());
-        flash('Votre demande à bien été envoyée !');
+        return redirect('/proposerEvenement')->with('status', 'Votre demande à bien été envoyée !');
+        
+
+      
 
     }
 
