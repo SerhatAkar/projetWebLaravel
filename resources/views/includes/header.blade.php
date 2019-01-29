@@ -24,9 +24,13 @@
                      <a class="nav-link" href={{ URL::to('boutique') }}>Boutique</a>
                   </li>
                   @if (auth::check()) 
+                  <li class="nav-item">
+                     <a href="#" >
+                     <span class="badge"><?php Session::has('cart') ? Session::get('cart')->totalQuantity : ''?></span> 
+                     <a class="nav-link" href={{ URL::to('shopping-cart') }}>Panier</a>
+                  </li>
 
                   <a class="nav-link" href={{ URL::to('logout') }}>Deconnexion</a>
-                  
 
               
                   @else

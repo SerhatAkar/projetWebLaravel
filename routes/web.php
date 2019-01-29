@@ -23,11 +23,23 @@ Route::get('/home', function () {
   return view('home',['data'=> $users]);
 });
 
- 
-Route::get('boutique', function () {
- 
-  return view('boutique');
-});
+// --------------------- //
+// Routes de la boutique //
+// --------------------- //
+
+Route::resource('boutique', 'ProductController');
+
+Route::resource('panier', 'ProductController');
+
+Route::resource('cart', 'ProductController');
+
+Route::get('/add-to-cart/{id}', ['uses' => 'ProductController@getAddToCart', 'as' => 'boutique'])->where('n', '[0-9]+');
+
+Route::get('/shopping-cart', ['uses' => 'ProductController@getCart', 'as' => 'shopCart'])->where('n', '[0-9]');
+
+// --------------------- //
+// Routes des évènements //
+// --------------------- //
 
 Route::get('evenements', function () {
   $propositions = DB::table('propositions')->get();
