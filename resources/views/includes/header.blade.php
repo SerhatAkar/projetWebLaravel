@@ -38,7 +38,7 @@
               
                   @else
                   
-                  
+               
                   <li class="nav-item">
                      <a class="nav-link" href={{ URL::to('login') }}>Connexion</a>
                   </li>
