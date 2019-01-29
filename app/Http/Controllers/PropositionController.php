@@ -39,7 +39,7 @@ class PropositionController extends Controller
         
         $proposition =  proposition::create(
         $request->all());
-        
+
         return redirect('/proposerEvenement')->with('status', 'Votre demande à bien été envoyée !');
 
 
@@ -76,9 +76,11 @@ class PropositionController extends Controller
      * @param  \App\proposition  $proposition
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, proposition $proposition)
+    public function update(Request $request, task $task)
     {
-        //
+        $task->statut = $request->statut;
+
+        $task->save();
     }
 
     /**
@@ -91,4 +93,22 @@ class PropositionController extends Controller
     {
         //
     }
+
+
+public function accept( $id){
+   
+    $table = proposition::findOrFail($id);
+    $table->statut = 1;
+    $table->save();
+    return view('modererProposition')->with('message', 'La proposition à bien été validée !');
+}
+
+public function decline( $id ) {
+
+    $table = proposition::findOrFail($id);
+    $table->statut = 1;
+    $table->save();
+    return view('modererProposition')->with('message', 'La proposition à bien été supprimée !');
+}
+
 }

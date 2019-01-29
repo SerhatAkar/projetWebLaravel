@@ -1,7 +1,4 @@
 
-
-
-
 @include('includes.head')
 <body>
 
@@ -12,8 +9,18 @@
 </video>
 <main>
 
+
+
 <div class="row" id="proposer">
 <p> Les evenements sont ici ! </p>
+
+@if( Auth::check() and Auth::user()->permissions == 1)
+
+<button type="button"> <a href="{{ URL::to('modererProposition') }}"> Moderer les propositions </button>
+
+
+
+@endif
 </div>
 <div class="container-fluid" id="carousel1">
     <div id="carousel">
@@ -77,6 +84,9 @@
 </div>
 
 @endif
+
+
+
 @endforeach
 
 
