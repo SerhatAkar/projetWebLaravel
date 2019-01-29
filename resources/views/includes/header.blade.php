@@ -24,6 +24,9 @@
                      <a class="nav-link" href={{ URL::to('boutique') }}>Boutique</a>
                   </li>
                   @if (auth::check()) 
+                  @if( Auth::check() and Auth::user()->permissions == 3)
+                  <a class="nav-link" href={{ URL::to('download') }}>Telecharger photos</a>
+                  @endif
                   <li class="nav-item">
                      <a href="#" >
                      <span class="badge"><?php Session::has('cart') ? Session::get('cart')->totalQuantity : ''?></span> 
@@ -36,9 +39,6 @@
                   @else
                   
                   
-
-
-                   
                   <li class="nav-item">
                      <a class="nav-link" href={{ URL::to('login') }}>Connexion</a>
                   </li>
@@ -57,3 +57,15 @@
 
 
       
+
+   
+      
+            
+
+                  
+              
+                 
+
+
+                   
+                

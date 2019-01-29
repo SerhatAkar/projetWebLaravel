@@ -66,18 +66,12 @@ Route::post('/proposerEvenement','PropositionController@store');
 
 Route::post('/acceptProposition/{id}', 'PropositionController@accept')->name('acceptProposition');
 Route::post('/declineProposition/{id}', 'PropositionController@decline')->name('declineProposition');
+Route::post('/deleteProposition', 'PropositionController@delete')->name('deleteProposition');
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/download', 'PropositionController@delete')->name('download');
+Route::get('/download','download@getDownload');
 
- 
-
-//Route::post('/inscription','auth\RegisterController@create');
-
-// Route::match(['get', 'post'], 'register', function(){
- //  return redirect('/');
-// }); 
-
-
-
+Route::post('creernouvEvenement', 'creerEvenement@donnerData')->name('creernouvEvenement');
+Route::post('finaliserEvenement', 'creerEvenement@creer')->name('finaliserEvenement');
 
 
