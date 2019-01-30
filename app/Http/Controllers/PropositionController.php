@@ -95,20 +95,30 @@ class PropositionController extends Controller
     }
 
 
-public function accept( $id){
+public function accept( request $request){
    
-    $table = proposition::findOrFail($id);
+    $table = proposition::findOrFail($request -> id );
     $table->statut = 1;
     $table->save();
-    return view('modererProposition')->with('message', 'La proposition à bien été validée !');
+    return redirect('modererProposition')->with('message', 'La proposition à bien été validée !');
 }
 
-public function decline( $id ) {
+public function decline( request $request ) {
 
-    $table = proposition::findOrFail($id);
-    $table->statut = 1;
+    $table = proposition::findOrFail($request -> id );
+    $table->statut = 0;
     $table->save();
-    return view('modererProposition')->with('message', 'La proposition à bien été supprimée !');
+    return redirect('modererProposition')->with('message', 'La proposition à bien été supprimée !');
 }
+public function delete( request $request)
+
+{
+
+    $table = proposition::findOrFail($request -> id) ;
+    $table->statut = 5;
+    $table->save();
+    return redirect('modererProposition')->with('message', 'La proposition à bien été supprimée !');
+}
+
 
 }

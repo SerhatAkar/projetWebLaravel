@@ -4,10 +4,9 @@
 
 @include('includes.header')
 <div class="container-fluid">
-  <video autoplay muted loop id="myVideo">
-    <source src={{ asset('images/BlueSky.mp4') }} type="video/mp4">
-  </video>
-</div>
+<video autoplay muted loop id="myVideo">
+  <source src={{ asset('images/BlueSky.mp4') }} type="video/mp4">
+</video>
 <main>
 
 
@@ -27,31 +26,31 @@
     <div id="carousel">
 
        <div class="hideLeft">
-        <img src={{ asset('images/afterworkAffiche.jpg') }} alt="" class="img-fluid" >
+        <img src={{ asset('images/afterworkAffiche.jpg') }} class="img-fluid" >
       </div>
 
       <div class="prevLeftSecond">
-        <img src={{ asset('images/carrouselSweat.png') }} alt="" class="img-fluid">
+        <img src={{ asset('images/carrouselSweat.png') }} class="img-fluid">
       </div>
 
       <div class="prev">
-        <img src={{ asset('images/afterworkAffiche.jpg') }} alt="" class="img-fluid">
+        <img src={{ asset('images/afterworkAffiche.jpg') }} class="img-fluid">
       </div>
 
       <div class="selected">
-        <img src={{ asset('images/afterworkAffiche.jpg') }} alt="" class="img-fluid">
+        <img src={{ asset('images/afterworkAffiche.jpg') }} class="img-fluid">
       </div>
 
       <div class="next">
-        <img src={{ asset('images/afterworkAffiche.jpg') }} alt="" class="img-fluid">
+        <img src={{ asset('images/afterworkAffiche.jpg') }} class="img-fluid">
       </div>
 
       <div class="nextRightSecond">
-        <img src={{ asset('images/afterworkAffiche.jpg') }} alt="" class="img-fluid">
+        <img src={{ asset('images/afterworkAffiche.jpg') }} class="img-fluid">
       </div>
 
       <div class="hideRight">
-        <img src={{ asset('images/afterworkAffiche.jpg') }} alt="" class="img-fluid">
+        <img src={{ asset('images/afterworkAffiche.jpg') }} class="img-fluid">
       </div>
 
     </div>
@@ -60,9 +59,9 @@
 </div>
 
 
-<div class="row-fluid" id = "proposer_event">
+<div class="row" id = "proposer">
 
-<a style="text-align:center;" href="{{ URL::to('proposerEvenement') }}" > Proposer un evenement </a>
+<a href={{ URL::to('proposerEvenement') }}> Proposer un evenement </a>
 
 </div>
 
@@ -82,6 +81,21 @@
 <p> {{$propositions -> desc }} </p>
 <button> <i class="fas fa-plus"></i> </button>
 <button style="background-color:red;"> <i class="fas fa-minus"></i> </button>
+@if( Auth::check() and Auth::user()->permissions == 1)
+<form action= "{{ route('deleteProposition') }}" method = "POST" style="background-color:red;">
+@csrf
+<input type="hidden" name="id" value= "{{$propositions-> id }}"> 
+<button  style="background-color:red;" type="submit"> Supprimer  </button>
+</form>
+
+<input type="hidden" name="id" value= "{{$propositions-> id }}"> 
+
+<form action ="{{ route('creerEvenement') }}"  method="POST">
+@csrf
+<input type="hidden" name="id" value= "{{$propositions-> id }}"> 
+<button  style="background-color:red;" type="submit"> Creer l'evenement  </button>
+</form>
+@endif
 </div>
 
 @endif
@@ -90,9 +104,9 @@
 
 @endforeach
 
+
+
 </main>
-
-
 @include('includes.footer')
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>

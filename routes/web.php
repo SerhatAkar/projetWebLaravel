@@ -66,29 +66,18 @@ Route::post('/proposerEvenement','PropositionController@store');
 // Route::get('acceptProposition', 'PropositionController@accept')->name('acceptProposition');
 // Route::get('declineProposition', 'PropositionController@accept');
 
-Route::post('/acceptProposition/{id}', 'PropositionController@accept')->name('acceptProposition');
-Route::post('/declineProposition/{id}', 'PropositionController@decline')->name('declineProposition');
+Route::post('/acceptProposition', 'PropositionController@accept')->name('acceptProposition');
+Route::post('/declineProposition', 'PropositionController@decline')->name('declineProposition');
 Route::post('/deleteProposition', 'PropositionController@delete')->name('deleteProposition');
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/download', 'PropositionController@delete')->name('download');
+Route::get('/download','download@getDownload');
 
-// --------------------- //
-// Routes des ... //
-// --------------------- //
+Route::post('creernouvEvenement', 'creerEvenement@donnerData')->name('creernouvEvenement');
+Route::post('finaliserEvenement', 'creerEvenement@creer')->name('finaliserEvenement');
 
 
-
-//Route::post('/inscription','auth\RegisterController@create');
-
-// Route::match(['get', 'post'], 'register', function(){
- //  return redirect('/');
-// });
-
-// ----------------------------- //
-// Routes de mot de passe oublié //
-// ----------------------------- //
-
-Route::get('/connexion', ['uses' => 'ForgotPasswordController@showLinkRequestForm', 'as' => 'connexion']);
+Route::post('file-upload', 'upload@fileUploadPost')->name('fileUploadPost');
 
 // ----------------------------- //
 // Routes de mot de passe oublié //
@@ -97,3 +86,18 @@ Route::get('/connexion', ['uses' => 'ForgotPasswordController@showLinkRequestFor
 Route::get('/mentionsLegales', ['uses' => 'HomeController@getMentions', 'as' => 'mentionsLegales']);
 
 Route::get('/cgv', ['uses' => 'HomeController@getConditions', 'as' => 'cgv']);
+
+
+Route::post('/proposerEvenement','PropositionController@store');
+
+Route::post('/acceptProposition', 'PropositionController@accept')->name('acceptProposition');
+Route::post('/declineProposition', 'PropositionController@decline')->name('declineProposition');
+Route::post('/deleteProposition', 'PropositionController@delete')->name('deleteProposition');
+
+Route::post('/download', 'PropositionController@delete')->name('download');
+Route::get('/download','download@getDownload');
+
+Route::post('/creerEvenement', 'creerEvenement@donnerData')->name('creerEvenement');
+Route::post('/finaliserEvenement', 'creerEvenement@creer')->name('finaliserEvenement');
+
+Route::post('file-upload', 'upload@fileUploadPost')->name('fileUploadPost');
