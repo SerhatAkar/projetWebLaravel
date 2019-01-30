@@ -35,7 +35,7 @@
                         <div class="form-group">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="customControlInline">
-                                <label class="custom-control-label" for="customControlInline">On se rapelle de vous ? </label>
+                                <label class="custom-control-label" for="customControlInline">Rester connecté ? </label>
                             </div>
                         </div>
                     </form>
@@ -50,7 +50,7 @@
                     Pas encore inscrit <a href="#" class="ml-2">Inscription</a>
                     </div>
                     <div class="d-flex justify-content-center links">
-                        <a href="#">Vous avez encore oublié votre mot de passe ?</a>
+                        <a href="#">Mot de passe oublié ?</a>
                     </div>
                 </div>
             </div>

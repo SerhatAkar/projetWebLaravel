@@ -46,7 +46,7 @@ class ProductTableSeeder extends Seeder
         $products = new \App\Product([
             'imagePath' => 'http://wp.unil.ch/allezsavoir/files/2017/09/loutre_1_67.jpg',
             'title' => 'La loutre numéro 5',
-            'description' => 'La plus belle loutre - très chère',
+            'description' => 'Une loutre magnifique - très chère',
             'price' => 50
         ]);
         $products->save();
@@ -54,7 +54,7 @@ class ProductTableSeeder extends Seeder
         $products = new \App\Product([
             'imagePath' => 'https://dailygeekshow.com/wp-content/uploads/2018/06/dangers-loutres-de-mer.jpg',
             'title' => 'La loutre numéro 6',
-            'description' => 'Une belle loutre - pas cher',
+            'description' => 'La plus belle loutre - extrêmement chere',
             'price' => 60
         ]);
         $products->save();
