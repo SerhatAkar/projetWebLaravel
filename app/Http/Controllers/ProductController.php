@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
 use Stripe\Stripe;
+use Stripe\Charge;
 
 class ProductController extends Controller
 {
@@ -30,7 +31,7 @@ class ProductController extends Controller
                 $c++;
             }
         }  
-        return view('shop.index')->with('products', $array);
+        return view('shop.index')->withProducts($array);
     }
 
     public function getAddToCart(Request $request, $id)
@@ -41,7 +42,7 @@ class ProductController extends Controller
         $cart->add($product, $product->id);
  
         $request->session()->put('cart', $cart);
-        return view('shop.index');
+        return $this->index();
     }
 
     public function getCart() {
@@ -70,9 +71,9 @@ class ProductController extends Controller
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
 
-        Stripe::setApiKey(sk_test_Caxu3cH2bOT55sFc7jE2W9b0);
+        Stripe::setApiKey("sk_test_Caxu3cH2bOT55sFc7jE2W9b0");
         try {
-            Stripe::create(array(
+            Charge::create(array(
                 "amount" => $cart->totalPrice *100,
                 "currency" => "eur",
                 "source" => $request->input('stripeToken'),

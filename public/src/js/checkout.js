@@ -1,4 +1,4 @@
-Stripe.setPublishableKey('pk_test_TYooMQauvdEDq54NiTphI7jx');
+Stripe.setPublishableKey("pk_test_NSuU2q5eiUN5RKV3X9Wiolec");
 
 var $form = $('#checkout-form');
 
@@ -23,7 +23,7 @@ function stripeResponseHandler(status, response){
         $form.find('button').prop('disabled', false);
     } else {
         var token = response.id;
-        $form.appen($('<input type="hidden" name="stripeToken" />').val(token));
+        $form.append($('<input type="hidden" name="stripeToken" />').val(token));
 
         $form.get(0).submit();
     }

@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function getMentions()
+    {
+        return view('mentionsLegales');
+    }
+
+    public function getConditions()
+    {
+        return view('cgv');
+    }
 }

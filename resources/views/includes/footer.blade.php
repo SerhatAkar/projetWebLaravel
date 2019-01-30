@@ -36,6 +36,10 @@
          <!-- Copyright -->
          <div class="footer-copyright text-center py-3">© 2019 Copyright:
             <a href="https://mdbootstrap.com/education/bootstrap/"> B D E CESI NICE</a>
+            <br>
+            <a href="{{ route('mentionsLegales') }}"> Mentions légales</a>
+            <br>
+            <a href="{{ route('cgv') }}"> Conditions Générales de Vente</a>
          </div>
          <!-- Copyright -->
       </footer>

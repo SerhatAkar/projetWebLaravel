@@ -27,10 +27,7 @@ Route::get('/home', function () {
 // Routes de la boutique //
 // --------------------- //
 
-Route::get('/', [
-  'uses' => 'ProductController@index',
-  'as' => 'product.index'
-]);
+Route::get('/', ['uses' => 'ProductController@index', 'as' => 'product.index']);
 
 Route::get('boutique', ['uses' => 'ProductController@index', 'as' =>'boutique']);
 
@@ -93,3 +90,10 @@ Route::post('/deleteProposition', 'PropositionController@delete')->name('deleteP
 
 Route::get('/connexion', ['uses' => 'ForgotPasswordController@showLinkRequestForm', 'as' => 'connexion']);
 
+// ----------------------------- //
+// Routes de mot de passe oublié //
+// ----------------------------- //
+
+Route::get('/mentionsLegales', ['uses' => 'HomeController@getMentions', 'as' => 'mentionsLegales']);
+
+Route::get('/cgv', ['uses' => 'HomeController@getConditions', 'as' => 'cgv']);
