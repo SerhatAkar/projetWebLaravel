@@ -71,6 +71,7 @@ Route::post('/proposerEvenement','PropositionController@store');
 
 Route::post('/acceptProposition/{id}', 'PropositionController@accept')->name('acceptProposition');
 Route::post('/declineProposition/{id}', 'PropositionController@decline')->name('declineProposition');
+Route::post('/deleteProposition', 'PropositionController@delete')->name('deleteProposition');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
