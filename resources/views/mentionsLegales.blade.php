@@ -18,7 +18,7 @@ Contacter le responsable de la publication : <strong>thibault.caci@viacesi.fr</s
 Le responsable de la publication est une<strong> personne physique</strong><br />
 <br />
 Le Webmaster est  : <strong></strong><br />
-Contacter le Webmaster :  <strong><a href="mailto:groupe@mail.om?subject=Contact a partir des mentions lÃ©gales via le site www.lesitedubde.com">groupe@mail.om</a></strong><br />
+Contacter le Webmaster :  <strong><a href="mailto:groupe@mail.com?subject=Contact a partir des mentions legales via le site www.lesitedubde.com">groupe@mail.com</a></strong><br />
 L’hebergeur du site est : <strong>no host no host 00000 blabla</strong><br />
 
 <p style="text-align:justify"> </p>
@@ -56,7 +56,7 @@ Le paramétrage du logiciel de navigation permet d’informer de la présence de
 En France, les données personnelles sont notamment protégées par la loi n° 78-87 du 6 janvier 1978, la loi n° 2004-801 du 6 août 2004, l'article L. 226-13 du Code pénal et la Directive Européenne du 24 octobre 1995.</p>
 
 <p style="text-align:justify">Sur le site www.lesitedubde.com, CESI BDE ne collecte des informations personnelles ( suivant l'article 4 loi n°78-17 du 06 janvier 1978) relatives à l'utilisateur que pour le besoin de certains services proposés par le site www.lesitedubde.com. L'utilisateur fournit ces informations en toute connaissance de cause, notamment lorsqu'il procède par lui-même à leur saisie. Il est alors précisé à l'utilisateur du site www.lesitedubde.com l’obligation ou non de fournir ces informations.<br />
-Conformément aux dispositions des articles 38 et suivants de la loi 78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés, tout utilisateur dispose d’un droit d’accès, de rectification, de suppression et d’opposition aux données personnelles le concernant. Pour l’exercer, adressez votre demande à www.lesitedubde.com par email : <strong><a href="mailto:groupe@mail.om?subject=Contact ï¿½ partir des mentions lï¿½gales via le site www.lesitedubde.com">thibault.caci@viacesi.fr</a></strong> ou par écrit dûment signée, accompagnée d’une copie du titre d’identité avec signature du titulaire de la pièce, en précisant l’adresse à laquelle la réponse doit être envoyée.</p>
+Conformément aux dispositions des articles 38 et suivants de la loi 78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés, tout utilisateur dispose d’un droit d’accès, de rectification, de suppression et d’opposition aux données personnelles le concernant. Pour l’exercer, adressez votre demande à www.lesitedubde.com par email : <strong><a href="mailto:groupe@mail.com?subject=Contact a partir des mentions legales via le site www.lesitedubde.com">thibault.caci@viacesi.fr</a></strong> ou par écrit dûment signée, accompagnée d’une copie du titre d’identité avec signature du titulaire de la pièce, en précisant l’adresse à laquelle la réponse doit être envoyée.</p>
 
 <p style="text-align:justify">Aucune information personnelle de l'utilisateur du site www.lesitedubde.com n'est publiée à l'insu de l'utilisateur, échangée, transférée, cédée ou vendue sur un support quelconque à des tiers. Seule l'hypothèse du rachat du site www.lesitedubde.com et de ses droits autorise CESI BDE à transmettre les dites informations à l'éventuel acquéreur qui serait à son tour tenu à la même obligation de conservation et de modification des données vis à vis de l'utilisateur du site www.lesitedubde.com.<br />
 Le site www.lesitedubde.com est en conformité avec le RGPD voir notre politique RGPD  /.</p>

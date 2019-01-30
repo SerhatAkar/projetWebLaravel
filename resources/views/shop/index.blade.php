@@ -51,7 +51,8 @@
                         @endforeach
                     </div>
                     @endforeach
-                </div> <!-- end container -->    
+                </div> <!-- end container --> 
+</div>
 </div> <!-- end boutique-section -->
 
 @include('includes.footer')

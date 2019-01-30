@@ -43,7 +43,3 @@
          </div>
          <!-- Copyright -->
       </footer>
-
-</body>
-      </html>
-      <!-- Footer -->
