@@ -60,9 +60,9 @@
 </div>
 
 
-<div class="row" id = "proposer_event">
+<div class="row-fluid" id = "proposer_event">
 
-<a href={{ URL::to('proposerEvenement') }}> Proposer un evenement </a>
+<a style="text-align:center;" href="{{ URL::to('proposerEvenement') }}" > Proposer un evenement </a>
 
 </div>
 

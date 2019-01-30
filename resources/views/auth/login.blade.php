@@ -1,9 +1,5 @@
-
-@dump($errors)
 @include('includes.head')
 
-
-  
    <body>
    <video autoplay muted loop id="myVideo">
   <source src={{ asset('images/BlueSky.mp4') }} type="video/mp4">
