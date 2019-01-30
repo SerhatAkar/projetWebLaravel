@@ -27,19 +27,17 @@ Route::get('/home', function () {
 // Routes de la boutique //
 // --------------------- //
 
-<<<<<<< HEAD
 Route::get('/', ['uses' => 'ProductController@index', 'as' => 'product.index']);
-=======
-Route::resource('boutique', 'ProductController');
->>>>>>> 1b3b7caa8a10041b729d8148e84e786aed5f8132
 
-Route::resource('panier', 'ProductController');
+Route::get('boutique', ['uses' => 'ProductController@index', 'as' =>'boutique']);
 
-Route::resource('cart', 'ProductController');
+Route::get('/add-to-cart/{id}', ['uses' => 'ProductController@getAddToCart', 'as' => 'cart'])->where('n', '[0-9]+');
 
-Route::get('/add-to-cart/{id}', ['uses' => 'ProductController@getAddToCart', 'as' => 'boutique'])->where('n', '[0-9]+');
+Route::get('/shopping-cart', ['uses' => 'ProductController@getCart', 'as' => 'shoppingCart'])->where('n', '[0-9]');
 
-Route::get('/shopping-cart', ['uses' => 'ProductController@getCart', 'as' => 'shopCart'])->where('n', '[0-9]');
+Route::get('/checkout', ['uses' => 'ProductController@getCheckout', 'as' => 'checkout']);
+
+Route::post('/checkout', ['uses' => 'ProductController@postCheckout', 'as' => 'checkout']);
 
 // --------------------- //
 // Routes des évènements //
@@ -72,13 +70,25 @@ Route::post('/acceptProposition/{id}', 'PropositionController@accept')->name('ac
 Route::post('/declineProposition/{id}', 'PropositionController@decline')->name('declineProposition');
 Route::post('/deleteProposition', 'PropositionController@delete')->name('deleteProposition');
 
-Route::post('/download', 'PropositionController@delete')->name('download');
-Route::get('/download','download@getDownload');
+//Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('creernouvEvenement', 'creerEvenement@donnerData')->name('creernouvEvenement');
-Route::post('finaliserEvenement', 'creerEvenement@creer')->name('finaliserEvenement');
+// --------------------- //
+// Routes des ... //
+// --------------------- //
 
-Route::post('upload', 'upload@upload')->name('upload');
+
+
+//Route::post('/inscription','auth\RegisterController@create');
+
+// Route::match(['get', 'post'], 'register', function(){
+ //  return redirect('/');
+// });
+
+// ----------------------------- //
+// Routes de mot de passe oublié //
+// ----------------------------- //
+
+Route::get('/connexion', ['uses' => 'ForgotPasswordController@showLinkRequestForm', 'as' => 'connexion']);
 
 // ----------------------------- //
 // Routes de mot de passe oublié //
