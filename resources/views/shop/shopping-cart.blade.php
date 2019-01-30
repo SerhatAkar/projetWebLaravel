@@ -35,7 +35,7 @@
     </div>
 <?php } else { ?>
         <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-            <h2>No items in cart ! </h2>
+            <h2>No item in cart ! </h2>
         </div>
 <?php } ?>
 
