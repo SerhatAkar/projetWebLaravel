@@ -19,7 +19,7 @@
 
     <div class="row align-items-center">
         <div class="col-sm-6 col-lg-6 col-lg-offset-3 col-sm-offset-3">
-            <strong>Total: {{ $totalPrice }} </strong>
+            <strong>Total: {{ $totalPrice }} €</strong>
         </div>
         <hr>
         <div class="col-sm-6 col-lg-3 col-lg-offset-3 col-sm-offset-3">
