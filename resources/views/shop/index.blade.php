@@ -12,19 +12,29 @@
             
                 <!-- affichage des articles -->
                 <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-3 col-lg-3">
+                    <div class="row align-items-center">
+                        <div class="col-sm-12 col-lg-12">
                             <nav class="navbar navbar-light bg-light mb-3">
                                 <label>Rechercher :</label>
                                 <input onchange="actionForm(this.value)" class="form-control mr-sm-2" id="search" type="search" placeholder="" aria-label="Search">
                             </nav>
                         </div>
                     </div>
-                        <?php foreach ($products as $produit) { ?>
-                        <script> console.log("test"); </script>
-                        <div class="row">
-                            <?php foreach ($produit as $product) { ?>
-                            <div class="col-sm-12 col-md-3 col-lg-3">
+
+                    @if(Session::has('success'))
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-4 col-lg-offset-4 col-sm-offset-3">
+                            <div id="charge-message" class="alert alert-success">
+                                {{ Session::get('success') }}
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
+                    @foreach ($products as $produit)
+                    <div class="row align-items-center">
+                         @foreach ($produit as $product)
+                            <div class="col-sm-12 col-lg-4">
                                 <div class="thumbnail">
                                     <img src="<?php echo $product->imagePath; ?>" alt="..." style="max-height:150px" class="img-responsive">
                                     <div class="caption">
@@ -32,15 +42,15 @@
                                         <p class="description"><?php echo $product->description; ?></p>
                                         <div class="clearfix">
                                             <div class="pull-left price" style="font-weight:bold"><?php echo $product->price;?> €</div>
-                                            <a href="<?php echo route('cart', ['id' => $product->id]); ?>" class="btn btn-success pull-right" role="button">Add to cart</a>
+                                            <a href="{{ route('cart', ['id' => $product->id]) }}" class="btn btn-success" role="button">Add to cart</a>
                                             <label style="padding-bottom: 20px"></label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <?php } ?>
-                        </div>
-                        <?php } ?>
+                        @endforeach
+                    </div>
+                    @endforeach
                 </div> <!-- end container -->    
 </div> <!-- end boutique-section -->
 

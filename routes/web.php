@@ -27,15 +27,20 @@ Route::get('/home', function () {
 // Routes de la boutique //
 // --------------------- //
 
-Route::resource('boutique', 'ProductController');
+Route::get('/', [
+  'uses' => 'ProductController@index',
+  'as' => 'product.index'
+]);
 
-Route::resource('panier', 'ProductController');
+Route::get('boutique', ['uses' => 'ProductController@index', 'as' =>'boutique']);
 
-Route::resource('cart', 'ProductController');
+Route::get('/add-to-cart/{id}', ['uses' => 'ProductController@getAddToCart', 'as' => 'cart'])->where('n', '[0-9]+');
 
-Route::get('/add-to-cart/{id}', ['uses' => 'ProductController@getAddToCart', 'as' => 'boutique'])->where('n', '[0-9]+');
+Route::get('/shopping-cart', ['uses' => 'ProductController@getCart', 'as' => 'shoppingCart'])->where('n', '[0-9]');
 
-Route::get('/shopping-cart', ['uses' => 'ProductController@getCart', 'as' => 'shopCart'])->where('n', '[0-9]');
+Route::get('/checkout', ['uses' => 'ProductController@getCheckout', 'as' => 'checkout']);
+
+Route::post('/checkout', ['uses' => 'ProductController@postCheckout', 'as' => 'checkout']);
 
 // --------------------- //
 // Routes des évènements //
@@ -69,15 +74,21 @@ Route::post('/declineProposition/{id}', 'PropositionController@decline')->name('
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
- 
+// --------------------- //
+// Routes des ... //
+// --------------------- //
+
+
 
 //Route::post('/inscription','auth\RegisterController@create');
 
 // Route::match(['get', 'post'], 'register', function(){
  //  return redirect('/');
-// }); 
+// });
 
+// ----------------------------- //
+// Routes de mot de passe oublié //
+// ----------------------------- //
 
-
-
+Route::get('/connexion', ['uses' => 'ForgotPasswordController@showLinkRequestForm', 'as' => 'connexion']);
 

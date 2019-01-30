@@ -3,7 +3,7 @@
 <html lang="fr">
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title> BDE CESI NICE / C O N N E X I O N </title>
+   <title> BDE CESI NICE / page </title>
    </head>
    <body>
 
