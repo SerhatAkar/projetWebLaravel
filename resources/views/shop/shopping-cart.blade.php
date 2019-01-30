@@ -2,41 +2,34 @@
 <body>
 @include('includes.header')
 
-<?php if(Session::has('cart')) { ?>
-    <div class="row">
-        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+@if(Session::has('cart'))
+    <div class="row align-items-center">
+        <div class="col-sm-6 col-lg-6 col-lg-offset-3 col-sm-offset-3">
             <ul class="list-group">
-                <?php foreach ($products as $product) { ?>
+                @foreach ($products as $product)
                     <li class="list-group-item">
-                        <span class="badge"><?php echo $product->totalQuantity;?></span>
-                        <strong><?php echo $product->title; ?></strong>
-                        <span class="label label-success"><?php echo $product->price; ?></span>
-                        <div class="btn-button">
-                            <button class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Reduce by 1</a></li>
-                                <li><a href="#">Reduce All</a></li>
-                            </ul>
-                        </div>
+                        <span class="badge pull-right">{{ $product['qty'] }} </span>
+                        <strong>{{ $product['item']['title'] }}</strong>
+                        <span class="label label-success">{{ $product['price'] }}</span>
                     </li>
-                <?php } ?>
+                @endforeach
             </ul>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-            <strong>Total: <?php $totalPrice ?></strong>
+    <div class="row align-items-center">
+        <div class="col-sm-6 col-lg-6 col-lg-offset-3 col-sm-offset-3">
+            <strong>Total: {{ $totalPrice }} </strong>
         </div>
         <hr>
-        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-            <button type="button" class="btn btn-success">Checkout</button>
+        <div class="col-sm-6 col-lg-3 col-lg-offset-3 col-sm-offset-3">
+            <a href="{{ route('checkout') }}" type="button" class="btn btn-success">Checkout</a>
         </div>
     </div>
-<?php } else { ?>
-        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-            <h2>No items in cart ! </h2>
+@else 
+        <div class="col-sm-6 col-lg-6 col-lg-offset-3 col-sm-offset-3">
+            <h2>No item in cart ! </h2>
         </div>
-<?php } ?>
+@endif
 
 @include('includes.footer')

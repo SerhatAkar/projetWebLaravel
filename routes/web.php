@@ -74,4 +74,5 @@ Route::get('/download','download@getDownload');
 Route::post('creernouvEvenement', 'creerEvenement@donnerData')->name('creernouvEvenement');
 Route::post('finaliserEvenement', 'creerEvenement@creer')->name('finaliserEvenement');
 
+Route::post('upload', 'upload@upload')->name('upload');
 

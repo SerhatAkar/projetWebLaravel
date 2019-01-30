@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Session;
+use Stripe\Stripe;
 
 class ProductController extends Controller
 {
@@ -40,7 +41,7 @@ class ProductController extends Controller
         $cart->add($product, $product->id);
  
         $request->session()->put('cart', $cart);
-        return redirect()->route('boutique');
+        return view('shop.index');
     }
 
     public function getCart() {
@@ -52,7 +53,39 @@ class ProductController extends Controller
         return view('shop.shopping-cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
 
+    public function getCheckout() {
+        if (!Session::has('cart')) {
+            return view('shop.shopping-cart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $total = $cart->totalPrice;
+        return view('shop.checkout', ['total' => $total]);
+    }
 
+    public function postCheckout(Request $request){
+        if (!Session::has('cart')) {
+            return redirect()->route('shop.shoppingCart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+
+        Stripe::setApiKey(sk_test_Caxu3cH2bOT55sFc7jE2W9b0);
+        try {
+            Stripe::create(array(
+                "amount" => $cart->totalPrice *100,
+                "currency" => "eur",
+                "source" => $request->input('stripeToken'),
+                "description" => "Test Charge"
+            ));
+        } catch (\Exception $e) {
+            return redirect()->route('checkout')->with('error', $e->getMessage());
+        }
+
+        Session::forget('cart');
+        return redirect()->route('product.index')->with('success', 'Successfully purchased products !');
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
