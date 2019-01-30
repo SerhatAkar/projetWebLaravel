@@ -1,4 +1,3 @@
-<!-- Footer -->
 <footer class="page-footer font-small dark  pt-4" id="footerCo">
          <!-- Footer Elements -->
          <div class="container">
@@ -42,4 +41,4 @@
             <a href="{{ route('cgv') }}"> Conditions Générales de Vente</a>
          </div>
          <!-- Copyright -->
-      </footer>
+</footer>
