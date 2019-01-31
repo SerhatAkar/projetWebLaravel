@@ -16,7 +16,27 @@ class creerEvenement extends Controller
 
 
     public function creer(request $request){
-        $evenement =  evenement::create($request->all());
+       
+        if ($request->hasFile('imagePath')) {
+            if($request->file('imagePath')->isValid()) {
+                try {
+                    $file = $request->file('imagePath');
+                    $name = rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
+                    $request->file('imagePath')->move('documents', $name);
+                    $evenement =  evenement::create(
+                        ['imagePath' => 'documents/'.$name],
+                        ['name' => $request -> name],
+                        ['place' => $request -> place],
+                        ['desc' => $request -> desc]
+                        
+                    );
+                   
+
+                } catch (Illuminate\Filesystem\FileNotFoundException $e) {
+        
+                }
+            }
+        }
        
         return redirect('evenements');
 

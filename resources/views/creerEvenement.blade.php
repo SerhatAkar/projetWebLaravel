@@ -10,7 +10,7 @@
 
 <div class="row col-md-12">
 <div class="col-md-6">
-<form  action="finaliserEvenement" method="POST">
+<form  action="finaliserEvenement" method="POST" enctype="multipart/form-data">
      {{ csrf_field() }}
 
      
@@ -29,7 +29,7 @@
         <input type="text" cols="40" rows="5" id="desc" name="desc">
         
         <label for="imagePath">Image:</label>
-        <input type="file" accept="image/png, image/jpg" cols="40" rows="5" id="imagePath" name="imagePath">
+        <input type="file"  id="imagePath" name="imagePath">
  
       </fieldset>
       
@@ -52,7 +52,6 @@
         <label for="desc">Description proposé :</label>
         <input  type="text" id="name" name="name" placeholder="{{ $table -> desc }}"readonly >
         
- 
       </fieldset>
     
 

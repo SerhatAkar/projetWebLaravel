@@ -7,7 +7,7 @@
 
      @include('includes.header')
 
-     <form  action="/inscription" method="POST">
+     <form  action="register" method="POST">
      {{ csrf_field() }}
       <h1>Creez votre compte !</h1>
       

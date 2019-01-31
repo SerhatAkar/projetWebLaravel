@@ -15,10 +15,10 @@ class CreateEvenementsTable extends Migration
     {
         Schema::create('evenements', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('place');
-            $table->string('desc');
-            $table->string('imagePath');
+            $table->string('name')->default("");
+            $table->string('place')->default("");
+            $table->string('desc')->default("");
+            $table->string('imagePath')->default("");
             $table->timestamps();
         });
     }
