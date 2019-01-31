@@ -120,5 +120,27 @@ public function delete( request $request)
     return redirect('modererProposition')->with('message', 'La proposition à bien été supprimée !');
 }
 
+public function voteUP( request $request)
+
+{
+
+    $table = proposition::findOrFail($request -> id) ;
+    $table->vote+= 1;
+    $table->save();
+    return redirect('evenements');
+    
+}
+
+public function voteDown( request $request)
+
+{
+
+    $table = proposition::findOrFail($request -> id) ;
+    $table->vote-= 1;
+    $table->save();
+    return redirect('evenements');
+    
+}
+
 
 }

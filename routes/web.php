@@ -94,6 +94,12 @@ Route::post('/acceptProposition', 'PropositionController@accept')->name('acceptP
 Route::post('/declineProposition', 'PropositionController@decline')->name('declineProposition');
 Route::post('/deleteProposition', 'PropositionController@delete')->name('deleteProposition');
 
+
+Route::post('/voteUP', 'PropositionController@voteUP')->name('voteUP');
+Route::post('/voteDown', 'PropositionController@voteDown')->name('voteDown');
+
+
+
 Route::post('/download', 'PropositionController@delete')->name('download');
 Route::get('/download','download@getDownload');
 

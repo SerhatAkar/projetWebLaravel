@@ -38,7 +38,7 @@ class creerEvenement extends Controller
             }
         }
        
-        return redirect('evenements');
+        return redirect('evenements')->with('message', "L'evenement final  à bien été crée !");
 
     }
 }

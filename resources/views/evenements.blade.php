@@ -69,18 +69,37 @@
 
 <div class="row-fluid">
 <h1 style="text-align:center;"> Voici les evenements proposés ! </h1>
+@if (session('message'))
+     <div class="alert alert-sucess">
+     <h1 style="color: blue;"> {{ session('message')}} </h1>
+     </div>
+     @endif
+    </div>
 </div>
 
 
 @foreach ($propositions->sortByDesc('created_at')  as $propositions)
 
-@if ( $propositions -> statut  == 1 )
+
+@if ( $propositions -> statut  == 1  and Auth::check())
 <div row id="propositionsRow">
 <p> {{$propositions -> name }} </p>
 <p> {{$propositions -> place }}  </p>
 <p> {{$propositions -> desc }} </p>
-<button> <i class="fas fa-plus"></i> </button>
-<button style="background-color:red;"> <i class="fas fa-minus"></i> </button>
+<p> {{$propositions-> vote }} </p>
+
+<form action= "{{ route('voteUP') }}" method = "POST">
+@csrf
+<input type="hidden" name="id" value= "{{$propositions-> id }}"> 
+<button type="submit"> <i class="fas fa-plus"></i> </button>
+</form>
+<form action= "{{ route('voteDown') }}" method = "POST">
+@csrf
+<input type="hidden" name="id" value= "{{$propositions-> id }}"> 
+<button type="submit" style="background-color:red;"> <i class="fas fa-minus"></i> </button>
+</form>
+
+
 @if( Auth::check() and Auth::user()->permissions == 1)
 <form action= "{{ route('deleteProposition') }}" method = "POST" style="background-color:red;">
 @csrf

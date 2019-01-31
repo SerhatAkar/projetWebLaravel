@@ -20,7 +20,8 @@ class CreatePropositionsTable extends Migration
             $table->string('desc');
             $table->timestamps();
             $table->integer('statut')->default(0);
-
+            $table->integer('vote')->default(0);
+            
 
         });
     }
