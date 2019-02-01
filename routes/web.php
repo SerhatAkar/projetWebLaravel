@@ -33,11 +33,15 @@ Route::get('boutique', ['uses' => 'ProductController@index', 'as' =>'boutique'])
 
 Route::get('/add-to-cart/{id}', ['uses' => 'ProductController@getAddToCart', 'as' => 'cart'])->where('n', '[0-9]+');
 
+Route::get('/remove/{id}', ['uses' => 'ProductController@getRemoveItem', 'as' => 'product.remove']);
+
 Route::get('/shopping-cart', ['uses' => 'ProductController@getCart', 'as' => 'shoppingCart'])->where('n', '[0-9]');
 
-Route::get('/checkout', ['uses' => 'ProductController@getCheckout', 'as' => 'checkout']);
+Route::get('/paypalCheckout', ['uses' => 'ProductController@getPaypalCheckout', 'as' => 'checkout']);
 
-Route::post('/checkout', ['uses' => 'ProductController@postCheckout', 'as' => 'checkout']);
+Route::post('/paypalCheckout', ['uses' => 'ProductController@postPaypalCheckout', 'as' => 'checkout']);
+
+Route::resource('boutique', 'ProductController');
 
 // --------------------- //
 // Routes des évènements //

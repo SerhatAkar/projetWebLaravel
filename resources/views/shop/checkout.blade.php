@@ -62,3 +62,5 @@
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="{{ URL::to('src/js/checkout.js') }}"></script>
+
+@include('includes.footer')
