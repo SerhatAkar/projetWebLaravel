@@ -24,15 +24,15 @@
      @endif
 </div>
 
-
+<div row id="container-fluid">
 @foreach ($propositions->sortByDesc('created_at')  as $proposition)
 
 @if ( $proposition -> statut  == 0 )
-<div row id="propositionsRow">
+
 <p> {{$proposition -> name }} </p>
 <p> {{$proposition -> place }}  </p>
 <p> {{$proposition -> desc }} </p>
-$i= {{$proposition-> id }} ;
+
 <form action= "{{ route('acceptProposition') }}" method = "POST">
 
 @csrf

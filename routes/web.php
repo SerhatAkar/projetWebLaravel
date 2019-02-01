@@ -44,8 +44,9 @@ Route::post('/checkout', ['uses' => 'ProductController@postCheckout', 'as' => 'c
 // --------------------- //
 
 Route::get('evenements', function () {
+  $evenement = DB::table('evenements')->get();
   $propositions = DB::table('propositions')->get();
-  return view('evenements',['propositions'=> $propositions]);
+  return view('evenements',['propositions'=> $propositions], ['evenement'=>$evenement]);
 });
 
 Route::get('proposerEvenement', function () {
@@ -107,3 +108,5 @@ Route::post('/creerEvenement', 'creerEvenement@donnerData')->name('creerEvenemen
 Route::post('/finaliserEvenement', 'creerEvenement@creer')->name('finaliserEvenement');
 
 Route::post('file-upload', 'upload@fileUploadPost')->name('fileUploadPost');
+Route::post('participer', 'creerEvenement@participer')->name('participer');
+Route::get('sendbasicemail','MailController@basic_email');

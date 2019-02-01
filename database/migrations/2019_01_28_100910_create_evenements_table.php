@@ -20,6 +20,7 @@ class CreateEvenementsTable extends Migration
             $table->string('desc')->default("");
             $table->string('imagePath')->default("");
             $table->timestamps();
+         
         });
     }
 

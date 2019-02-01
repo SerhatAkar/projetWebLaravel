@@ -1,3 +1,7 @@
+
+dd($errors);
+
+
 @include('includes.head')
 
  <body>

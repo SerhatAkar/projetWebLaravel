@@ -1,7 +1,18 @@
+({{$errors}})
 @include('includes.head')
 <body>
 
 @include('includes.header')
+@if($errors->any())
+    <div class="alert alert-danger">
+        <p><strong>Opps Something went wrong</strong></p>
+        <ul> 
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+        </ul>
+    </div>
+@endif
 <div class="container-fluid">
 <video autoplay muted loop id="myVideo">
   <source src={{ asset('images/BlueSky.mp4') }} type="video/mp4">
@@ -11,7 +22,7 @@
 <div class="row col-md-12">
 <div class="col-md-6">
 <form  action="finaliserEvenement" method="POST" enctype="multipart/form-data">
-     {{ csrf_field() }}
+     @csrf
 
      
    

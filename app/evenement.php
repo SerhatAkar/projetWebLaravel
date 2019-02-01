@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class evenement extends Model
 {
+  
+
+    
     protected $fillable = [
-        'name', 'place', 'desc'
+        'name', 'place', 'desc','imagePath',
    ];
    protected $table = 'evenements';
 }
+
