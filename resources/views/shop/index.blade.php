@@ -31,25 +31,37 @@
                     </div>
                     @endif
 
-                    @foreach ($products as $produit)
-                    <div class="row align-items-center">
-                         @foreach ($produit as $product)
-                            <div class="col-sm-12 col-lg-4">
-                                <div class="thumbnail">
-                                    <img src="<?php echo $product->imagePath; ?>" alt="..." style="max-height:150px" class="img-responsive">
-                                    <div class="caption">
-                                        <h3> <?php echo $product->title; ?></h3>
-                                        <p class="description"><?php echo $product->description; ?></p>
-                                        <div class="clearfix">
-                                            <div class="pull-left price" style="font-weight:bold"><?php echo $product->price;?> €</div>
-                                            <a href="{{ route('cart', ['id' => $product->id]) }}" class="btn btn-success" role="button">Add to cart</a>
-                                            <label style="padding-bottom: 20px"></label>
-                                        </div>
-                                    </div>
-                                </div>
+                    @isset($deleted)
+                        <h4 style="color:red">{{ $deleted }}</h4>
+                    @endisset
+
+                    {!! link_to_route('boutique.create', 'Ajouter un produit', null, ['class' => 'btn btn-info pull-right']) !!}<br>
+
+                    @foreach($products as $product)
+                        <div style="border: solid 2px black; width:100%; margin-bottom:10px; padding: 2px;">
+                            <h4>
+                                {{ $product->title }}
+                            </h4>
+                            <p>
+                                <img src="{{ $product->imagePath }}" alt="No image" style="max-height:150px" class="img-responsive"> 
+                            </p>
+                            <p>
+                                {{ $product->description }}
+                            </p>
+                            <p>
+                                {{ $product->price }}€
+                            </p>
+                            
+                            <div>
+                                <a href="{{ route('cart', ['id' => $product->id]) }}" class="btn btn-success" role="button">Add to cart</a>
+                                <label style="padding-bottom: 20px"></label>
                             </div>
-                        @endforeach
-                    </div>
+                            {!! link_to_route('boutique.show', 'Voir', [$product->id], ['class' => 'btn btn-info pull-right']) !!}<br>
+                            {!! link_to_route('boutique.edit', 'Modifier', [$product->id], ['class' => 'btn btn-info pull-right']) !!}<br>
+                            {!! Form::open(['method' => 'DELETE', 'route' => ['boutique.destroy', $product->id]]) !!}
+                                    {!! Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer ce produit ?\')']) !!}
+                            {!! Form::close() !!}               
+                        </div>
                     @endforeach
                 </div> <!-- end container --> 
 </div>

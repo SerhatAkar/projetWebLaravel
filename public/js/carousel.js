@@ -153,7 +153,7 @@ $('#next').click(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/serhat/projetWeb/resources/js/carousel.js */"./resources/js/carousel.js");
+module.exports = __webpack_require__(/*! /home/thibaultprojetweb/Code/projetWebLaravel/resources/js/carousel.js */"./resources/js/carousel.js");
 
 
 /***/ })

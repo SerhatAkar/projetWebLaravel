@@ -360,3 +360,28 @@ label.light {
  background-color: lightslategrey;
 
 }
+
+.raw_cart{
+  position: absolute;
+  //margin-top: 50%;
+  margin-left: 500px;
+  //margin-right: -50%;
+  //transform: translate(-50%, -50%)
+}
+
+.btn_delete{
+  background-color: #FFF;
+  border: solid 1px black;
+  color: #c0392b;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  height: 100px;
+  width: 100px;
+  text-align: right;
+  cursor: pointer;
+}
+
+#total_price_per_item{
+  text-align: justify;
+}
